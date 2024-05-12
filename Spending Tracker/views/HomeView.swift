@@ -1,17 +1,8 @@
 import SwiftUI
 import CoreData
 
-struct ExpenseSummary: Identifiable {
-    let id = UUID()
-    var category: Category
-    var count: Int16
-    var totalAmount: Decimal
-}
-
 struct HomeView: View {
     @EnvironmentObject var dataManager: DataManager
-    
-    @Environment(\.managedObjectContext) private var viewContext
     
     var body: some View {
         NavigationView {
@@ -28,7 +19,7 @@ struct HomeView: View {
                 
                 Divider()
                 
-                ForEach(fetchExpenseSummary()) { expense in
+                ForEach(dataManager.fetchExpenseSummary()) { expense in
                     HStack{
                         NavigationLink(destination: TableView(selectedCategory: expense.category)) {
                             VStack(alignment: .leading){
@@ -57,6 +48,7 @@ struct HomeView: View {
                 }
                 
                 Spacer()
+
             }
             .padding()
             .background(Color.creamB)
@@ -64,29 +56,6 @@ struct HomeView: View {
         .accentColor(.redB)
     }
     
-    func fetchExpenseSummary() -> [ExpenseSummary] {
-        var summaries = [ExpenseSummary]()
-        var category: Category
-        var count = 0
-        var totalAmount = Decimal(0) // Ensure 'amount' is of type Decimal for financial calculations
-        
-        for c in dataManager.categories {
-            category = c
-            count = 0
-            totalAmount = Decimal(0) // Ensure 'amount' is of type Decimal for financial calculations
-            
-            for expense in dataManager.expenses {
-                if category.name == expense.category?.name {
-                    count += 1
-                    totalAmount += Decimal(expense.quantity) * Decimal(expense.amount)
-                }
-            }
-            
-            // Create a new summary for each category and add it to the array
-            let summary = ExpenseSummary(category: category, count: Int16(count), totalAmount: totalAmount)
-            summaries.append(summary)
-        }
-        return summaries
-    }
+    
     
 }

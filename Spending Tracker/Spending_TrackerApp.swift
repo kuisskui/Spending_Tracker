@@ -16,8 +16,6 @@ struct Spending_TrackerApp: App {
                 Header(username: dataManager.profile?.name ?? "Profile")
                 TabView {
                     HomeView()
-                        .environmentObject(dataManager)
-                        .environment(\.managedObjectContext, dataManager.container.viewContext)
                         .tabItem {
                             VStack {
                                 Image(systemName: "house")
@@ -26,8 +24,6 @@ struct Spending_TrackerApp: App {
                         }
 
                     ProfileView()
-                        .environmentObject(dataManager)
-                        .environment(\.managedObjectContext, dataManager.container.viewContext)
                         .tabItem {
                             VStack {
                                 Image(systemName: "person")
@@ -37,6 +33,8 @@ struct Spending_TrackerApp: App {
                 }
                 .accentColor(Color(red: 255 / 255, green: 235 / 255, blue: 202 / 255)) // Change color based on the selected tab
             }
+            .environmentObject(dataManager)
+            .environment(\.managedObjectContext, dataManager.container.viewContext)
         }
     }
 }

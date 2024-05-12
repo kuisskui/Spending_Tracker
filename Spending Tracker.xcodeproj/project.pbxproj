@@ -21,6 +21,7 @@
 		D123CC0B2BEEDB2200D8C6FE /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D123CC0A2BEEDB2200D8C6FE /* EmptyView.swift */; };
 		D123CC0D2BEF771200D8C6FE /* ExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D123CC0C2BEF771200D8C6FE /* ExpenseView.swift */; };
 		D123CC0F2BEF862200D8C6FE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D123CC0E2BEF862200D8C6FE /* ProfileView.swift */; };
+		D123CC152BF0C31B00D8C6FE /* ExpenseSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D123CC142BF0C31B00D8C6FE /* ExpenseSummary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		D123CC0A2BEEDB2200D8C6FE /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		D123CC0C2BEF771200D8C6FE /* ExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseView.swift; sourceTree = "<group>"; };
 		D123CC0E2BEF862200D8C6FE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		D123CC142BF0C31B00D8C6FE /* ExpenseSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseSummary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				D1087CEE2BEE62E100194834 /* views */,
 				D1087CED2BEE62BC00194834 /* forms */,
 				D1087CC82BEB899500194834 /* Spending_TrackerApp.swift */,
+				D123CC142BF0C31B00D8C6FE /* ExpenseSummary.swift */,
 				D1087CE92BECDCDB00194834 /* Color+Extensions.swift */,
 				D1087CE02BEBB76100194834 /* Model.xcdatamodeld */,
 				D1087CEF2BEE62FB00194834 /* components */,
@@ -198,6 +201,7 @@
 				D1087CEA2BECDCDB00194834 /* Color+Extensions.swift in Sources */,
 				D123CC0B2BEEDB2200D8C6FE /* EmptyView.swift in Sources */,
 				D1087CF12BEE642C00194834 /* CategoryFormView.swift in Sources */,
+				D123CC152BF0C31B00D8C6FE /* ExpenseSummary.swift in Sources */,
 				D1087CD92BEB8AEB00194834 /* TableView.swift in Sources */,
 				D1087CE42BECC52900194834 /* DataManager.swift in Sources */,
 				D1087CC92BEB899500194834 /* Spending_TrackerApp.swift in Sources */,

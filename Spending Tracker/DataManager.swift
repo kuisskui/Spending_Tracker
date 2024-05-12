@@ -3,7 +3,6 @@ import SwiftUI
 import Foundation
 import Combine
 
-
 /// Main data manager to handle the expense items
 class DataManager: NSObject, ObservableObject {
     /// Published property to update the UI upon changes
@@ -67,6 +66,48 @@ class DataManager: NSObject, ObservableObject {
         }
     }
     
+    func saveExpense(name: String, amount: String, quantity: String, selectedCategory: Category) {
+        // Create a new instance of the Expense entity and set its attributes
+        let newExpense = Expense(context: container.viewContext)
+        newExpense.name = name
+        newExpense.amount = Double(amount) ?? 0
+        newExpense.quantity = Int16(quantity) ?? 0
+        newExpense.category = selectedCategory // Set the selected category
+        
+        // Save the changes to the managed object context
+        do {
+            try container.viewContext.save()
+            fetchExpenses()
+        } catch {
+            print("Error saving expense: \(error.localizedDescription)")
+        }
+    }
+    
+    func fetchExpenseSummary() -> [ExpenseSummary] {
+        var summaries = [ExpenseSummary]()
+        var category: Category
+        var count = 0
+        var totalAmount = Decimal(0) // Ensure 'amount' is of type Decimal for financial calculations
+        
+        for c in categories {
+            category = c
+            count = 0
+            totalAmount = Decimal(0) // Ensure 'amount' is of type Decimal for financial calculations
+            
+            for expense in expenses {
+                if category.name == expense.category?.name {
+                    count += 1
+                    totalAmount += Decimal(expense.quantity) * Decimal(expense.amount)
+                }
+            }
+            
+            // Create a new summary for each category and add it to the array
+            let summary = ExpenseSummary(category: category, count: Int16(count), totalAmount: totalAmount)
+            summaries.append(summary)
+        }
+        return summaries
+    }
+    
     func fetchCategories(){
         let request: NSFetchRequest<Category> = Category.fetchRequest()
 
@@ -79,6 +120,19 @@ class DataManager: NSObject, ObservableObject {
         } catch {
             // Handle the fetch error appropriately in real apps
             print("Fetch failed: \(error.localizedDescription)")
+        }
+    }
+    
+    func deleteCategory(category: Category) {
+        container.viewContext.delete(category)
+        do {
+            try container.viewContext.save()
+            print("Successfully deleted expense.")
+            // Re-fetch the data to update the UI
+            fetchCategories()
+        } catch {
+            print("Error saving context after deleting expense: \(error)")
+            container.viewContext.rollback() // Rollback any changes if save fails
         }
     }
     

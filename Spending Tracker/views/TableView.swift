@@ -2,21 +2,17 @@ import SwiftUI
 import CoreData
 
 struct TableView: View {
-    var selectedCategory: Category
-    
     @EnvironmentObject var dataManager: DataManager
-    @Environment(\.managedObjectContext) private var viewContext
-    
-    let categoryName = "Food"
-    let username = "kuisskui"
+    @Environment(\.presentationMode) var presentationModel
+    var selectedCategory: Category
     
     var body: some View {
         VStack(spacing: 10){
             HStack{
                 VStack{
                     Text(selectedCategory.name ?? "nil").font(.title2)
-                    
                 }
+               
                 Spacer()
                 
                 Text("\(dataManager.fetchExpenses(categoryName: selectedCategory.name ?? "").count.formatted()) times").font(.caption).foregroundColor(Color.gray)
@@ -44,6 +40,7 @@ struct TableView: View {
             }.foregroundColor(Color.redB)
             
             Divider()
+            
             ForEach(dataManager.fetchExpenses(categoryName: selectedCategory.name ?? "")) { expense in
                 HStack {
                     NavigationLink(destination: ExpenseView(expense: expense)){
@@ -59,9 +56,10 @@ struct TableView: View {
                 Divider()
                 
             }
+            
             if dataManager.fetchExpenses(categoryName: selectedCategory.name ?? "").count == 0{
                 Button("Delete") {
-                    deleteCategory(category: selectedCategory)
+                    dataManager.deleteCategory(category: selectedCategory)
                 }
                 .padding(.vertical, 10)
                 .padding(.horizontal, 20)
@@ -77,17 +75,6 @@ struct TableView: View {
         .background(Color.creamB)
         
     }
-    func deleteCategory(category: Category) {
-        dataManager.container.viewContext.delete(category)
-        do {
-            try dataManager.container.viewContext.save()
-            print("Successfully deleted expense.")
-            // Re-fetch the data to update the UI
-            dataManager.fetchCategories()
-        } catch {
-            print("Error saving context after deleting expense: \(error)")
-            dataManager.container.viewContext.rollback() // Rollback any changes if save fails
-        }
-    }
+    
     
 }
