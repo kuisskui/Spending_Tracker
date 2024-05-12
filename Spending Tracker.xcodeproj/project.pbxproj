@@ -8,17 +8,37 @@
 
 /* Begin PBXBuildFile section */
 		D1087CC92BEB899500194834 /* Spending_TrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1087CC82BEB899500194834 /* Spending_TrackerApp.swift */; };
-		D1087CCB2BEB899500194834 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1087CCA2BEB899500194834 /* ContentView.swift */; };
 		D1087CCD2BEB899600194834 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1087CCC2BEB899600194834 /* Assets.xcassets */; };
 		D1087CD02BEB899600194834 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1087CCF2BEB899600194834 /* Preview Assets.xcassets */; };
+		D1087CD72BEB8AD800194834 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1087CD62BEB8AD800194834 /* HomeView.swift */; };
+		D1087CD92BEB8AEB00194834 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1087CD82BEB8AEB00194834 /* TableView.swift */; };
+		D1087CDB2BEBAC7B00194834 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1087CDA2BEBAC7B00194834 /* Header.swift */; };
+		D1087CE22BEBB76100194834 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D1087CE02BEBB76100194834 /* Model.xcdatamodeld */; };
+		D1087CE42BECC52900194834 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1087CE32BECC52900194834 /* DataManager.swift */; };
+		D1087CE82BECCC0000194834 /* ExpenseFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1087CE72BECCC0000194834 /* ExpenseFormView.swift */; };
+		D1087CEA2BECDCDB00194834 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1087CE92BECDCDB00194834 /* Color+Extensions.swift */; };
+		D1087CF12BEE642C00194834 /* CategoryFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1087CF02BEE642C00194834 /* CategoryFormView.swift */; };
+		D123CC0B2BEEDB2200D8C6FE /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D123CC0A2BEEDB2200D8C6FE /* EmptyView.swift */; };
+		D123CC0D2BEF771200D8C6FE /* ExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D123CC0C2BEF771200D8C6FE /* ExpenseView.swift */; };
+		D123CC0F2BEF862200D8C6FE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D123CC0E2BEF862200D8C6FE /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D1087CC52BEB899500194834 /* Spending Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spending Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1087CC82BEB899500194834 /* Spending_TrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spending_TrackerApp.swift; sourceTree = "<group>"; };
-		D1087CCA2BEB899500194834 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D1087CCC2BEB899600194834 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D1087CCF2BEB899600194834 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D1087CD62BEB8AD800194834 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		D1087CD82BEB8AEB00194834 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		D1087CDA2BEBAC7B00194834 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		D1087CE12BEBB76100194834 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		D1087CE32BECC52900194834 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		D1087CE72BECCC0000194834 /* ExpenseFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseFormView.swift; sourceTree = "<group>"; };
+		D1087CE92BECDCDB00194834 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		D1087CF02BEE642C00194834 /* CategoryFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFormView.swift; sourceTree = "<group>"; };
+		D123CC0A2BEEDB2200D8C6FE /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		D123CC0C2BEF771200D8C6FE /* ExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseView.swift; sourceTree = "<group>"; };
+		D123CC0E2BEF862200D8C6FE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +71,13 @@
 		D1087CC72BEB899500194834 /* Spending Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				D1087CE32BECC52900194834 /* DataManager.swift */,
+				D1087CEE2BEE62E100194834 /* views */,
+				D1087CED2BEE62BC00194834 /* forms */,
 				D1087CC82BEB899500194834 /* Spending_TrackerApp.swift */,
-				D1087CCA2BEB899500194834 /* ContentView.swift */,
+				D1087CE92BECDCDB00194834 /* Color+Extensions.swift */,
+				D1087CE02BEBB76100194834 /* Model.xcdatamodeld */,
+				D1087CEF2BEE62FB00194834 /* components */,
 				D1087CCC2BEB899600194834 /* Assets.xcassets */,
 				D1087CCE2BEB899600194834 /* Preview Content */,
 			);
@@ -65,6 +90,35 @@
 				D1087CCF2BEB899600194834 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D1087CED2BEE62BC00194834 /* forms */ = {
+			isa = PBXGroup;
+			children = (
+				D1087CE72BECCC0000194834 /* ExpenseFormView.swift */,
+				D1087CF02BEE642C00194834 /* CategoryFormView.swift */,
+			);
+			path = forms;
+			sourceTree = "<group>";
+		};
+		D1087CEE2BEE62E100194834 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				D1087CD82BEB8AEB00194834 /* TableView.swift */,
+				D123CC0E2BEF862200D8C6FE /* ProfileView.swift */,
+				D123CC0C2BEF771200D8C6FE /* ExpenseView.swift */,
+				D1087CD62BEB8AD800194834 /* HomeView.swift */,
+				D123CC0A2BEEDB2200D8C6FE /* EmptyView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		D1087CEF2BEE62FB00194834 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				D1087CDA2BEBAC7B00194834 /* Header.swift */,
+			);
+			path = components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +191,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1087CCB2BEB899500194834 /* ContentView.swift in Sources */,
+				D1087CDB2BEBAC7B00194834 /* Header.swift in Sources */,
+				D123CC0F2BEF862200D8C6FE /* ProfileView.swift in Sources */,
+				D1087CD72BEB8AD800194834 /* HomeView.swift in Sources */,
+				D1087CE82BECCC0000194834 /* ExpenseFormView.swift in Sources */,
+				D1087CEA2BECDCDB00194834 /* Color+Extensions.swift in Sources */,
+				D123CC0B2BEEDB2200D8C6FE /* EmptyView.swift in Sources */,
+				D1087CF12BEE642C00194834 /* CategoryFormView.swift in Sources */,
+				D1087CD92BEB8AEB00194834 /* TableView.swift in Sources */,
+				D1087CE42BECC52900194834 /* DataManager.swift in Sources */,
 				D1087CC92BEB899500194834 /* Spending_TrackerApp.swift in Sources */,
+				D1087CE22BEBB76100194834 /* Model.xcdatamodeld in Sources */,
+				D123CC0D2BEF771200D8C6FE /* ExpenseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +406,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D1087CE02BEBB76100194834 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D1087CE12BEBB76100194834 /* Model.xcdatamodel */,
+			);
+			currentVersion = D1087CE12BEBB76100194834 /* Model.xcdatamodel */;
+			name = Model.xcdatamodeld;
+			path = "/Users/kuisskui/Desktop/ios/Spending Tracker/Spending Tracker/Model.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D1087CBD2BEB899500194834 /* Project object */;
 }
