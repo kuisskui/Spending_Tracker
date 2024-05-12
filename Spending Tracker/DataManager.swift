@@ -42,7 +42,6 @@ class DataManager: NSObject, ObservableObject {
 
         do {
             temp = try container.viewContext.fetch(request)
-            print("Fetched \(temp.count) expenses for category \(categoryName)")
         } catch {
             print("Error fetching expenses: \(error)")
         }
