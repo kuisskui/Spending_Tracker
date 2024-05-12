@@ -19,27 +19,29 @@ struct HomeView: View {
                 
                 Divider()
                 
-                ForEach(dataManager.fetchExpenseSummary()) { expense in
-                    HStack{
-                        NavigationLink(destination: TableView(selectedCategory: expense.category)) {
-                            VStack(alignment: .leading){
-                                Text(expense.category.name ?? "-")
-                                Text("\(expense.count) times").font(.caption).foregroundColor(Color.gray).padding(.vertical, -20)
+                ScrollView{
+                    ForEach(dataManager.fetchExpenseSummary()) { expense in
+                        HStack{
+                            NavigationLink(destination: TableView(selectedCategory: expense.category)) {
+                                VStack(alignment: .leading){
+                                    Text(expense.category.name ?? "-")
+                                    Text("\(expense.count) times").font(.caption).foregroundColor(Color.gray).padding(.vertical, -20)
+                                }
+                                
+                                Spacer()
+                                Text("\(expense.totalAmount)")
+                                    .padding(.horizontal, 20) // Add padding around the text to form a circular shape
+                                    .padding(.vertical, 10)
+                                    .foregroundColor(.white) // Set the text color to white for better readability
+                                    .background(GeometryReader { geometry in
+                                        Color.redB.cornerRadius(geometry.size.height / 2)
+                                    })
                             }
-                            
-                            Spacer()
-                            Text("\(expense.totalAmount)")
-                                .padding(.horizontal, 20) // Add padding around the text to form a circular shape
-                                .padding(.vertical, 10)
-                                .foregroundColor(.white) // Set the text color to white for better readability
-                                .background(GeometryReader { geometry in
-                                    Color.redB.cornerRadius(geometry.size.height / 2)
-                                })
+                            .foregroundColor(Color.black)
                         }
-                        .foregroundColor(Color.black)
+                        
+                        Divider()
                     }
-                    
-                    Divider()
                 }
                 
                 NavigationLink(destination: CategoryFormView()) {

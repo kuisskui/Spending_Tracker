@@ -40,22 +40,24 @@ struct TableView: View {
             }.foregroundColor(Color.redB)
             
             Divider()
-            
-            ForEach(dataManager.fetchExpenses(categoryName: selectedCategory.name ?? "")) { expense in
-                HStack {
-                    NavigationLink(destination: ExpenseView(expense: expense)){
-                        Text(expense.name ?? "")
-                        Spacer()
-                        Text("\(expense.quantity)")
-                        Spacer()
-                        Text(String(format: "%.2f THB", expense.amount))
+            ScrollView{
+                ForEach(dataManager.fetchExpenses(categoryName: selectedCategory.name ?? "")) { expense in
+                    HStack {
+                        NavigationLink(destination: ExpenseView(expense: expense)){
+                            Text(expense.name ?? "")
+                            Spacer()
+                            Text("\(expense.quantity)")
+                            Spacer()
+                            Text(String(format: "%.2f THB", expense.amount))
+                        }
+                        .foregroundColor(Color.black)
                     }
-                    .foregroundColor(Color.black)
+                    
+                    Divider()
+                    
                 }
-                
-                Divider()
-                
             }
+            
             
             if dataManager.fetchExpenses(categoryName: selectedCategory.name ?? "").count == 0{
                 Button("Delete") {
